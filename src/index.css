@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+/* Vite 기본 스타일 무력화 + 전체 폭/배경 지정 */
+@layer base {
+  html, body, #root {
+    @apply w-full min-h-screen bg-neutral-950 text-neutral-50;
+  }
+  #root {
+    @apply max-w-none m-0 p-0;   /* Vite의 max-width/margin 제거 */
+  }
+  body {
+    @apply overflow-x-hidden;    /* 가로 스크롤 방지 */
+  }
+   html { scroll-behavior: smooth; }
+}
+
+@layer utilities {
+  .anchor-target { scroll-margin-top: 80px; }
+}
+

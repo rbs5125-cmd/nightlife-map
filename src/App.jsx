@@ -82,43 +82,40 @@ export default function App() {
         <div aria-hidden className="absolute inset-0 -z-10 bg-black/10" />
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 pt-16 pb-24 text-center">
-          <div className="text-5xl md:text-6xl font-extrabold leading-tight">
-            {/* (필요 시) 헤더 텍스트 */}
-            {/* <div className="text-neutral-200">{SITE.year}</div>
-      <div>{SITE.h1Line1}</div>
-      <div>{SITE.h1Line2}</div> */}
-          </div>
-
-          {/* 버튼들을 동일하게 더 아래로 */}
-          <div className="mt-12 md:mt-16 mb-[30px] flex flex-wrap justify-center gap-3">
-            <a
-              href={telHref}
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-fuchsia-600 hover:bg-fuchsia-500 text-white font-semibold"
-            >
-              📞 바로 연결하기 · {SITE.phone}
-            </a>
-            <a
-              href="#map"
-              className="px-5 py-3 rounded-xl bg-neutral-800 hover:bg-neutral-700 border border-neutral-700 text-white"
-            >
-              위치 확인
-            </a>
-          </div>
+          {/* (원하시면 히어로 제목/문구 넣고, 현재는 비워둠) */}
         </div>
       </section>
 
-      {/* 보라색 띠 배너 (HERO 밑으로 분리) */}
-      <section className="bg-fuchsia-700 border-y-8 border-neutral-900">
+      {/* 버튼 2개: 히어로 밖 분리 */}
+      <section aria-label="빠른 연결" className="bg-neutral-950">
+        <div className="max-w-5xl mx-auto px-4 py-6 flex flex-wrap justify-center gap-3">
+          <a
+            href={telHref}
+            className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-fuchsia-600 hover:bg-fuchsia-500 text-white font-semibold"
+          >
+            📞 바로 연결하기 · {SITE.phone}
+          </a>
+          <a
+            href="#map"
+            className="px-5 py-3 rounded-xl bg-neutral-800 hover:bg-neutral-700 border border-neutral-700 text-white"
+          >
+            위치 확인
+          </a>
+        </div>
+      </section>
+
+      {/* 보라색 띠 배너: 버튼 아래로 */}
+      <section className="relative z-10 bg-fuchsia-700 border-y-8 border-neutral-900">
         <div className="max-w-6xl mx-auto px-4 py-6 text-center">
           <p className="text-white text-lg md:text-xl font-bold leading-relaxed">
-            ❤️대전 유성구 봉명동❤️<br />
+            ❤️대전 유성구 봉명동❤️
+            <br />
             정직한 가격과 믿을 수 있는 서비스, 24시간 문의 환영
             <br className="hidden md:block" />
             ❤️문의 {SITE.phone}❤️
           </p>
         </div>
       </section>
-
 
       {/* INTRO 텍스트 블록 */}
       <section id="about" className="max-w-5xl mx-auto px-6 py-16">

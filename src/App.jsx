@@ -15,7 +15,7 @@ const SITE = {
   // 지도 검색어(또는 좌표 문자열), 길찾기 링크
   mapQuery: "대전광역시 유성구 온천로 9",
   directionsUrl:
-    "https://maps.google.com/?q=%EB%B6%80%EC%82%B0%EA%B4%91%EC%97%AD%EC%8B%9C+%EB%B6%80%EC%82%B0%EC%A7%84%EA%B5%AC+%EB%B6%80%EC%A0%84%EB%A1%9C+28",
+    "https://www.google.com/maps/place/%EB%8C%80%EC%A0%84%EA%B4%91%EC%97%AD%EC%8B%9C+%EC%9C%A0%EC%84%B1%EA%B5%AC+%EC%98%A8%EC%B2%9C%EB%A1%9C+9/data=!3m1!4b1!4m6!3m5!1s0x35654b786ba493d7:0xdd29a92448e0fc79!8m2!3d36.3562273!4d127.3390307!16s%2Fg%2F11bzcgqh98?entry=ttu&g_ep=EgoyMDI1MDgxOS4wIKXMDSoASAFQAw%3D%3D",
   telegramHandle: "TENPRO_K", // @ 없이
   telegramUrl: "https://t.me/TENPRO_K", // 웹/앱 자동 열림
 };

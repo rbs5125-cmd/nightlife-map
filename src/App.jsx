@@ -75,30 +75,26 @@ export default function App() {
         {/* 배경 이미지 */}
         <div
           aria-hidden
-          className="absolute inset-0 -z-10 bg-center" // bg-cover 제거
-          style={{
-            backgroundImage: `url(${heroBg})`,
-            backgroundSize: "contain",      // 전체가 다 보이도록
-            backgroundRepeat: "no-repeat",  // 반복 금지
-            backgroundPosition: "center top",
-            backgroundColor: "#0a0a0a",     // 여백 생길 때 배경색
-          }}
+          className="absolute inset-0 -z-10 bg-cover bg-center"
+          style={{ backgroundImage: `url(${heroBg})` }}
         />
         {/* 어둡게 오버레이 */}
         <div aria-hidden className="absolute inset-0 -z-10 bg-black/10" />
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 pt-16 pb-24 text-center">
           <div className="text-5xl md:text-6xl font-extrabold leading-tight">
-            <div className="text-neutral-200">{SITE.year}</div>
-            <div>{SITE.h1Line1}</div>
-            <div>{SITE.h1Line2}</div>
+            {/* (필요 시) 헤더 텍스트 */}
+            {/* <div className="text-neutral-200">{SITE.year}</div>
+      <div>{SITE.h1Line1}</div>
+      <div>{SITE.h1Line2}</div> */}
           </div>
 
           <p className="mt-6 text-neutral-200 text-lg max-w-3xl mx-auto leading-relaxed">
-
+            대전 최고의 K실장 대기 중. 어떤 시간대든 연락만 주시면 친절히 도와드리겠습니다.
           </p>
 
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
+          {/* 버튼들을 동일하게 더 아래로 */}
+          <div className="mt-12 md:mt-16 flex flex-wrap justify-center gap-3">
             <a
               href={telHref}
               className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-fuchsia-600 hover:bg-fuchsia-500 text-white font-semibold"
@@ -107,26 +103,26 @@ export default function App() {
             </a>
             <a
               href="#map"
-              className="px-5 py-3 rounded-xl bg-neutral-800 hover:bg-neutral-700 border border-neutral-700"
+              className="px-5 py-3 rounded-xl bg-neutral-800 hover:bg-neutral-700 border border-neutral-700 text-white"
             >
               위치 확인
             </a>
           </div>
         </div>
+      </section>
 
-        {/* 보라색 띠 배너 */}
-        <div className="relative z-10 bg-fuchsia-700 border-y-8 border-neutral-900">
-          <div className="max-w-6xl mx-auto px-4 py-6 text-center">
-            <p className="text-white text-lg md:text-xl font-bold leading-relaxed">
-              ❤️대전 유성구 봉명동❤️
-              <br />
-              정직한 가격과 믿을 수 있는 서비스, 24시간 문의 환영
-              <br className="hidden md:block" />
-              ❤️문의 {SITE.phone}❤️
-            </p>
-          </div>
+      {/* 보라색 띠 배너 (HERO 밑으로 분리) */}
+      <section className="bg-fuchsia-700 border-y-8 border-neutral-900">
+        <div className="max-w-6xl mx-auto px-4 py-6 text-center">
+          <p className="text-white text-lg md:text-xl font-bold leading-relaxed">
+            ❤️대전 유성구 봉명동❤️<br />
+            정직한 가격과 믿을 수 있는 서비스, 24시간 문의 환영
+            <br className="hidden md:block" />
+            ❤️문의 {SITE.phone}❤️
+          </p>
         </div>
       </section>
+
 
       {/* INTRO 텍스트 블록 */}
       <section id="about" className="max-w-5xl mx-auto px-6 py-16">

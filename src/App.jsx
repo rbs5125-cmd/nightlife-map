@@ -1,6 +1,6 @@
 // src/App.jsx
 import React from "react";
-import heroBg from "./assets/hero-bg.webp";
+import heroBg from "./assets/hero-bg.gif";
 import roomImg from "./assets/room.gif";
 import poolImg from "./assets/pool.gif";
 

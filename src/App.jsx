@@ -89,12 +89,8 @@ export default function App() {
       <div>{SITE.h1Line2}</div> */}
           </div>
 
-          <p className="mt-6 text-neutral-200 text-lg max-w-3xl mx-auto leading-relaxed">
-            대전 최고의 K실장 대기 중. 어떤 시간대든 연락만 주시면 친절히 도와드리겠습니다.
-          </p>
-
           {/* 버튼들을 동일하게 더 아래로 */}
-          <div className="mt-12 md:mt-16 flex flex-wrap justify-center gap-3">
+          <div className="mt-12 md:mt-16 mb-[30px] flex flex-wrap justify-center gap-3">
             <a
               href={telHref}
               className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-fuchsia-600 hover:bg-fuchsia-500 text-white font-semibold"

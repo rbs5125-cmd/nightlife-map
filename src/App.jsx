@@ -1,10 +1,12 @@
 // src/App.jsx
 import React from "react";
 import heroBg from "./assets/hero-bg.webp";
+import roomImg from "./assets/room.gif";
+import poolImg from "./assets/pool.gif";
 
 /** ====== 페이지 기본 정보만 여기서 수정하면 전체 반영됩니다 ====== */
 const SITE = {
-  brand: "대전룸싸롱",                // 좌상단 로고 텍스트
+  brand: "대전룸싸롱", // 좌상단 로고 텍스트
   year: "텐프로 K실장",
   h1Line1: "대전 룸싸롱",
   h1Line2: "풀싸롱",
@@ -14,8 +16,8 @@ const SITE = {
   mapQuery: "대전광역시 유성구 온천로 9",
   directionsUrl:
     "https://maps.google.com/?q=%EB%B6%80%EC%82%B0%EA%B4%91%EC%97%AD%EC%8B%9C+%EB%B6%80%EC%82%B0%EC%A7%84%EA%B5%AC+%EB%B6%80%EC%A0%84%EB%A1%9C+28",
-  telegramHandle: "TENPRO_K",                 // @ 없이
-  telegramUrl: "https://t.me/TENPRO_K",       // 웹/앱 자동 열림
+  telegramHandle: "TENPRO_K", // @ 없이
+  telegramUrl: "https://t.me/TENPRO_K", // 웹/앱 자동 열림
 };
 /** =============================================================== */
 
@@ -23,13 +25,12 @@ const SITE = {
 const gallery = Object.entries(
   import.meta.glob("./assets/gallery/*.gif", {
     eager: true,
-    query: "?url",      // ← as: "url" 대신
-    import: "default",  // ← default export를 바로 받기
+    query: "?url", // Vite 경고 대체: as:'url' → query:'?url'
+    import: "default",
   })
 )
   .sort(([a], [b]) => a.localeCompare(b)) // 001 → 017
   .map(([, url]) => url);
-
 
 const telHref = `tel:${SITE.phone.replaceAll("-", "")}`;
 const mapEmbedSrc = `https://www.google.com/maps?q=${encodeURIComponent(
@@ -46,10 +47,18 @@ export default function App() {
             {SITE.brand}
           </div>
           <nav className="ml-auto hidden sm:flex items-center gap-4 text-sm">
-            <a href="#gallery" className="hover:text-fuchsia-400">소개</a>
-            <a href="#howto" className="hover:text-fuchsia-400">이용 방법</a>
-            <a href="#rooms" className="hover:text-fuchsia-400">서비스</a>
-            <a href="#map" className="hover:text-fuchsia-400">오시는 길</a>
+            <a href="#gallery" className="hover:text-fuchsia-400">
+              소개
+            </a>
+            <a href="#howto" className="hover:text-fuchsia-400">
+              이용 방법
+            </a>
+            <a href="#rooms" className="hover:text-fuchsia-400">
+              서비스
+            </a>
+            <a href="#map" className="hover:text-fuchsia-400">
+              오시는 길
+            </a>
           </nav>
 
           <a
@@ -80,7 +89,8 @@ export default function App() {
           </div>
 
           <p className="mt-6 text-neutral-200 text-lg max-w-3xl mx-auto leading-relaxed">
-            대전 최고의 K실장 대기 중. 어떤 시간대든 연락만 주시면 친절히 도와드리겠습니다.
+            대전 최고의 K실장 대기 중. 어떤 시간대든 연락만 주시면 친절히
+            도와드리겠습니다.
           </p>
 
           <div className="mt-8 flex flex-wrap justify-center gap-3">
@@ -103,7 +113,9 @@ export default function App() {
         <div className="relative z-10 bg-fuchsia-700 border-y-8 border-neutral-900">
           <div className="max-w-6xl mx-auto px-4 py-6 text-center">
             <p className="text-white text-lg md:text-xl font-bold leading-relaxed">
-              ❤️대전 유성구 봉명동❤️<br />정직한 가격과 믿을 수 있는 서비스, 24시간 문의 환영
+              ❤️대전 유성구 봉명동❤️
+              <br />
+              정직한 가격과 믿을 수 있는 서비스, 24시간 문의 환영
               <br className="hidden md:block" />
               ❤️문의 {SITE.phone}❤️
             </p>
@@ -115,7 +127,8 @@ export default function App() {
       <section id="about" className="max-w-5xl mx-auto px-6 py-16">
         <div className="space-y-4 text-center text-neutral-100">
           <p className="text-[18px] md:text-[28px] leading-relaxed font-bold">
-            단순한 유흥이 아닌, 고객이 품격 있는 휴식과 의미있는 <br />시간을 보낼 수 있는 프리미엄 공간입니다.
+            단순한 유흥이 아닌, 고객이 품격 있는 휴식과 의미있는 <br />
+            시간을 보낼 수 있는 프리미엄 공간입니다.
           </p>
           <ul className="space-y-2 text-neutral-300 text-[18px] md:text-[20px] leading-relaxed">
             <li>• 세련된 분위기 연출</li>
@@ -132,8 +145,11 @@ export default function App() {
           >
             📞{SITE.phone}
           </a>
+
+          {/* 텔레그램: 필요시 앱 URL로 교체 가능 */}
+          {/* 예: telegramAppUrl = "tg://resolve?domain=TENPRO_K" */}
           <a
-            href={SITE.telegramUrl}              // 또는 telegramAppUrl
+            href={SITE.telegramUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="block text-center rounded-2xl bg-neutral-900 hover:bg-neutral-800
@@ -142,8 +158,9 @@ export default function App() {
             ✈️ 텔레그램 문의 @{SITE.telegramHandle}
           </a>
 
+          {/* 카톡 채널 URL은 필요 시 교체 */}
           <a
-            href="https://open.kakao.com/o/sMF2iuOh" // 필요 시 카톡 채널 URL로 교체
+            href="https://open.kakao.com/o/sMF2iuOh"
             target="_blank"
             rel="noreferrer"
             className="block text-center rounded-2xl bg-yellow-400 hover:bg-yellow-300 text-neutral-900 font-extrabold text-xl py-5"
@@ -153,6 +170,7 @@ export default function App() {
         </div>
       </section>
 
+      {/* ROOMS */}
       <section id="rooms" className="max-w-6xl mx-auto px-6 py-16">
         <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-10">
           다양한 초이스 가능!
@@ -163,7 +181,7 @@ export default function App() {
           <article>
             <div
               className="relative h-[320px] w-full rounded-3xl overflow-hidden bg-cover bg-center"
-              style={{ backgroundImage: "url('/room.gif')" }}
+              style={{ backgroundImage: `url(${roomImg})` }}
               role="img"
               aria-label="대전 룸싸롱"
             >
@@ -193,7 +211,7 @@ export default function App() {
           <article>
             <div
               className="relative h-[320px] w-full rounded-3xl overflow-hidden bg-cover bg-center"
-              style={{ backgroundImage: "url('/pool.gif')" }}
+              style={{ backgroundImage: `url(${poolImg})` }}
               role="img"
               aria-label="대전 풀싸롱"
             >
@@ -223,7 +241,9 @@ export default function App() {
       {/* GIF 갤러리: 세로 정렬(원본 크기, 화면 넘치면 줄이기) */}
       <section id="gallery" className="anchor-target bg-neutral-950">
         <div className="max-w-4xl mx-auto px-4 py-12">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-8">소개</h2>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-8">
+            소개
+          </h2>
 
           {/* 세로 스택 */}
           <div className="flex flex-col items-center gap-6">
@@ -242,7 +262,10 @@ export default function App() {
       </section>
 
       {/* 이용 방법 (아이콘은 이모지로 간단히) */}
-      <section id="howto" className="anchor-target bg-neutral-950 border-t border-neutral-800">
+      <section
+        id="howto"
+        className="anchor-target bg-neutral-950 border-t border-neutral-800"
+      >
         <div className="max-w-6xl mx-auto px-6 py-16">
           <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-10">
             이용 방법
@@ -251,17 +274,27 @@ export default function App() {
             <div className="rounded-2xl border border-neutral-800 bg-neutral-900 p-8">
               <div className="text-5xl mb-3">📞</div>
               <h3 className="font-bold mb-2">전화 예약</h3>
-              <p className="text-neutral-300">언제나 대기 중이며 빠른 예약을 <br />도와드립니다.</p>
+              <p className="text-neutral-300">
+                언제나 대기 중이며 빠른 예약을 <br />
+                도와드립니다.
+              </p>
             </div>
             <div className="rounded-2xl border border-neutral-800 bg-neutral-900 p-8">
               <div className="text-5xl mb-3">🚗</div>
               <h3 className="font-bold mb-2">픽업</h3>
-              <p className="text-neutral-300">대전 각 지역 픽업 서비스 제공<br />(사전 문의).</p>
+              <p className="text-neutral-300">
+                대전 각 지역 픽업 서비스 제공
+                <br />
+                (사전 문의).
+              </p>
             </div>
             <div className="rounded-2xl border border-neutral-800 bg-neutral-900 p-8">
               <div className="text-5xl mb-3">🕰️</div>
               <h3 className="font-bold mb-2">이용하기</h3>
-              <p className="text-neutral-300">편안하고 품격 있는 환경에서<br /> 시간 보내기.</p>
+              <p className="text-neutral-300">
+                편안하고 품격 있는 환경에서
+                <br /> 시간 보내기.
+              </p>
             </div>
           </div>
         </div>
@@ -284,7 +317,8 @@ export default function App() {
               </div>
             </div>
             <p className="mt-3 text-xs text-neutral-400">
-              지도 임베드는 Google Maps를 사용합니다. 위치 수정은 파일 상단의 <code>mapQuery</code>를 변경하세요.
+              지도 임베드는 Google Maps를 사용합니다. 위치 수정은 파일 상단의{" "}
+              <code>mapQuery</code>를 변경하세요.
             </p>
           </div>
           <div className="lg:col-span-5 space-y-4">
@@ -322,7 +356,6 @@ export default function App() {
           </a>
         </div>
       </div>
-
 
       {/* 푸터 */}
       <footer className="border-t border-neutral-800 text-neutral-400 text-xs py-6 px-4 text-center">

@@ -71,12 +71,19 @@ export default function App() {
       </header>
 
       {/* HERO */}
-      <section className="relative isolate overflow-hidden min-h-[520px]">
-        {/* 배경 이미지 */}
-        <div
-          aria-hidden
-          className="absolute inset-0 -z-10 bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroBg})` }}
+      <section
+        className="relative isolate overflow-hidden bg-black
+             h-[52vh] min-h-[480px] lg:h-[62vh]"
+      >
+        {/* 배경 이미지: 비율 유지 */}
+        <img
+          src={heroBg}
+          alt=""
+          className="
+      absolute inset-0 -z-10 w-full h-full
+      object-cover        /* 기본: 채우되 살짝 크롭 */
+      xl:object-contain   /* 큰 화면에선 전체 보이게 */
+      object-[50%_35%]    /* 보이는 영역을 약간 위로 */ "
         />
         {/* 어둡게 오버레이 */}
         <div aria-hidden className="absolute inset-0 -z-10 bg-black/10" />
@@ -93,7 +100,7 @@ export default function App() {
             href={telHref}
             className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-fuchsia-600 hover:bg-fuchsia-500 text-white font-semibold"
           >
-            📞 바로 연결하기 · {SITE.phone}
+            📞&nbsp;&nbsp;바로 연결하기 · {SITE.phone}
           </a>
           <a
             href="#map"
@@ -149,7 +156,7 @@ export default function App() {
             className="block text-center rounded-2xl bg-neutral-900 hover:bg-neutral-800
              border-2 border-white font-semibold text-xl py-5"
           >
-            ✈️ 텔레그램 문의 @{SITE.telegramHandle}
+            텔레그램 문의 @{SITE.telegramHandle}
           </a>
 
           {/* 카톡 채널 URL은 필요 시 교체 */}
@@ -159,7 +166,7 @@ export default function App() {
             rel="noreferrer"
             className="block text-center rounded-2xl bg-yellow-400 hover:bg-yellow-300 text-neutral-900 font-extrabold text-xl py-5"
           >
-            카톡 문의
+            카톡 문의 TenPro ROOM
           </a>
         </div>
       </section>

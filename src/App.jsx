@@ -186,7 +186,7 @@ export default function App() {
               aria-label="대전 룸싸롱"
             >
               {/* 살짝 어둡게(텍스트 가독성) */}
-              <div className="absolute inset-0 bg-black/30" />
+              <div className="absolute inset-0 bg-black/0" />
             </div>
 
             <div className="mt-6 text-center">
@@ -215,7 +215,7 @@ export default function App() {
               role="img"
               aria-label="대전 풀싸롱"
             >
-              <div className="absolute inset-0 bg-black/30" />
+              <div className="absolute inset-0 bg-black/0" />
             </div>
 
             <div className="mt-6 text-center">

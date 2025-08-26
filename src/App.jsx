@@ -163,7 +163,7 @@ export default function App() {
           <article>
             <div
               className="relative h-[320px] w-full rounded-3xl overflow-hidden bg-cover bg-center"
-              style={{ backgroundImage: "url('/room.jpg')" }}
+              style={{ backgroundImage: "url('/room.gif')" }}
               role="img"
               aria-label="대전 룸싸롱"
             >
@@ -193,7 +193,7 @@ export default function App() {
           <article>
             <div
               className="relative h-[320px] w-full rounded-3xl overflow-hidden bg-cover bg-center"
-              style={{ backgroundImage: "url('/pool.jpg')" }}
+              style={{ backgroundImage: "url('/pool.gif')" }}
               role="img"
               aria-label="대전 풀싸롱"
             >

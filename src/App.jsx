@@ -75,8 +75,14 @@ export default function App() {
         {/* 배경 이미지 */}
         <div
           aria-hidden
-          className="absolute inset-0 -z-10 bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroBg})` }}
+          className="absolute inset-0 -z-10 bg-center" // bg-cover 제거
+          style={{
+            backgroundImage: `url(${heroBg})`,
+            backgroundSize: "contain",      // 전체가 다 보이도록
+            backgroundRepeat: "no-repeat",  // 반복 금지
+            backgroundPosition: "center top",
+            backgroundColor: "#0a0a0a",     // 여백 생길 때 배경색
+          }}
         />
         {/* 어둡게 오버레이 */}
         <div aria-hidden className="absolute inset-0 -z-10 bg-black/60" />

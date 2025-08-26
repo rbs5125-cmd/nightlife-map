@@ -7,9 +7,9 @@ import poolImg from "./assets/pool.gif";
 /** ====== 페이지 기본 정보만 여기서 수정하면 전체 반영됩니다 ====== */
 const SITE = {
   brand: "대전룸싸롱", // 좌상단 로고 텍스트
-  year: "텐프로 K실장",
-  h1Line1: "대전 룸싸롱",
-  h1Line2: "풀싸롱",
+  year: "",
+  h1Line1: "",
+  h1Line2: "",
   phone: "010-2174-7954",
   addressLine: "대전 유성구 봉명동",
   // 지도 검색어(또는 좌표 문자열), 길찾기 링크
@@ -85,7 +85,7 @@ export default function App() {
           }}
         />
         {/* 어둡게 오버레이 */}
-        <div aria-hidden className="absolute inset-0 -z-10 bg-black/60" />
+        <div aria-hidden className="absolute inset-0 -z-10 bg-black/10" />
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 pt-16 pb-24 text-center">
           <div className="text-5xl md:text-6xl font-extrabold leading-tight">
@@ -95,8 +95,7 @@ export default function App() {
           </div>
 
           <p className="mt-6 text-neutral-200 text-lg max-w-3xl mx-auto leading-relaxed">
-            대전 최고의 K실장 대기 중. 어떤 시간대든 연락만 주시면 친절히
-            도와드리겠습니다.
+
           </p>
 
           <div className="mt-8 flex flex-wrap justify-center gap-3">

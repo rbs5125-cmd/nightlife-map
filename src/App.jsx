@@ -5,9 +5,9 @@ import heroBg from "./assets/hero-bg.webp";
 /** ====== 페이지 기본 정보만 여기서 수정하면 전체 반영됩니다 ====== */
 const SITE = {
   brand: "대전룸싸롱",                // 좌상단 로고 텍스트
-  year: "2025년",
-  h1Line1: "대전 풀싸롱",
-  h1Line2: "룸싸롱",
+  year: "텐프로 K실장",
+  h1Line1: "대전 룸싸롱",
+  h1Line2: "풀싸롱",
   phone: "010-2174-7954",
   addressLine: "대전 유성구 봉명동",
   // 지도 검색어(또는 좌표 문자열), 길찾기 링크
@@ -16,7 +16,7 @@ const SITE = {
     "https://maps.google.com/?q=%EB%B6%80%EC%82%B0%EA%B4%91%EC%97%AD%EC%8B%9C+%EB%B6%80%EC%82%B0%EC%A7%84%EA%B5%AC+%EB%B6%80%EC%A0%84%EB%A1%9C+28",
   telegramHandle: "TENPRO_K",                 // @ 없이
   telegramUrl: "https://t.me/TENPRO_K",       // 웹/앱 자동 열림
-  };
+};
 /** =============================================================== */
 
 // 17장 GIF 자동 수집 (001.gif ~ 017.gif, 이름순 정렬)
@@ -46,10 +46,10 @@ export default function App() {
             {SITE.brand}
           </div>
           <nav className="ml-auto hidden sm:flex items-center gap-4 text-sm">
-          <a href="#gallery" className="hover:text-fuchsia-400">소개</a>
-          <a href="#howto"   className="hover:text-fuchsia-400">이용 방법</a>
-          <a href="#rooms"   className="hover:text-fuchsia-400">서비스</a>
-          <a href="#map"     className="hover:text-fuchsia-400">오시는 길</a>
+            <a href="#gallery" className="hover:text-fuchsia-400">소개</a>
+            <a href="#howto" className="hover:text-fuchsia-400">이용 방법</a>
+            <a href="#rooms" className="hover:text-fuchsia-400">서비스</a>
+            <a href="#map" className="hover:text-fuchsia-400">오시는 길</a>
           </nav>
 
           <a
@@ -62,15 +62,15 @@ export default function App() {
       </header>
 
       {/* HERO */}
-<section className="relative isolate overflow-hidden min-h-[520px]">
-  {/* 배경 이미지 */}
-  <div
-    aria-hidden
-    className="absolute inset-0 -z-10 bg-cover bg-center"
-    style={{ backgroundImage: `url(${heroBg})` }}
-  />
-  {/* 어둡게 오버레이 */}
-  <div aria-hidden className="absolute inset-0 -z-10 bg-black/60" />
+      <section className="relative isolate overflow-hidden min-h-[520px]">
+        {/* 배경 이미지 */}
+        <div
+          aria-hidden
+          className="absolute inset-0 -z-10 bg-cover bg-center"
+          style={{ backgroundImage: `url(${heroBg})` }}
+        />
+        {/* 어둡게 오버레이 */}
+        <div aria-hidden className="absolute inset-0 -z-10 bg-black/60" />
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 pt-16 pb-24 text-center">
           <div className="text-5xl md:text-6xl font-extrabold leading-tight">
@@ -82,7 +82,7 @@ export default function App() {
           <p className="mt-6 text-neutral-200 text-lg max-w-3xl mx-auto leading-relaxed">
             대전 최고의 K실장 대기 중. 어떤 시간대든 연락만 주시면 친절히 도와드리겠습니다.
           </p>
-        
+
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <a
               href={telHref}
@@ -130,7 +130,7 @@ export default function App() {
             href={telHref}
             className="block text-center rounded-2xl bg-green-500 hover:bg-green-400 text-neutral-900 font-extrabold text-2xl py-6"
           >
-            {SITE.phone}
+            📞{SITE.phone}
           </a>
           <a
             href={SITE.telegramUrl}              // 또는 telegramAppUrl
@@ -153,47 +153,65 @@ export default function App() {
         </div>
       </section>
 
-      {/* 두 개 섹션 카드(이미지 대신 패턴 박스) */}
-      <section id="rooms" className="anchor-target max-w-6xl mx-auto px-6 py-16">
+      <section id="rooms" className="max-w-6xl mx-auto px-6 py-16">
         <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-10">
           다양한 초이스 가능!
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* 카드 1 */}
-          <article className="space-y-5">
-            <div className="aspect-[16/10] rounded-2xl border border-neutral-800 bg-[linear-gradient(135deg,#0a0a0a,#1e1e1e)]" />
-            <h3 className="text-2xl font-extrabold text-fuchsia-400 text-center">
-              ● 대전 룸싸롱
-            </h3>
-            <p className="text-neutral-300 text-center leading-relaxed">
-              기본적인 룸살롱 서비스를 넘어, 고객님의 취향과 기대에 맞춘 맞춤형 엔터테인먼트를
-              제공합니다. 품격 있는 순간을 경험해 보세요.
-            </p>
-            <div className="text-center">
+        <div className="grid md:grid-cols-2 gap-10">
+          {/* 왼쪽: 룸싸롱 */}
+          <article>
+            <div
+              className="relative h-[320px] w-full rounded-3xl overflow-hidden bg-cover bg-center"
+              style={{ backgroundImage: "url('/room.jpg')" }}
+              role="img"
+              aria-label="대전 룸싸롱"
+            >
+              {/* 살짝 어둡게(텍스트 가독성) */}
+              <div className="absolute inset-0 bg-black/30" />
+            </div>
+
+            <div className="mt-6 text-center">
+              <div className="flex justify-center items-center gap-2 text-pink-400 font-extrabold text-2xl">
+                <span className="inline-block w-3 h-3 rounded-full bg-pink-500" />
+                대전 룸싸롱
+              </div>
+              <p className="mt-4 text-neutral-300">
+                기본적인 룸살롱 서비스를 넘어, 고객님의 취향과 기대에 맞춘 맞춤형
+                엔터테인먼트를 제공합니다. 품격 있는 순간을 경험해 보세요.
+              </p>
               <a
-                href={telHref}
-                className="inline-block px-5 py-3 rounded-xl bg-neutral-900 hover:bg-neutral-800 border border-neutral-700"
+                href="#rooms" // 필요시 버튼 링크 변경
+                className="inline-block mt-6 rounded-xl border border-neutral-700 px-5 py-3 text-neutral-200 hover:bg-neutral-800"
               >
                 대전 룸싸롱
               </a>
             </div>
           </article>
 
-          {/* 카드 2 */}
-          <article className="space-y-5">
-            <div className="aspect-[16/10] rounded-2xl border border-neutral-800 bg-[linear-gradient(135deg,#0a0a0a,#1a1020)]" />
-            <h3 className="text-2xl font-extrabold text-fuchsia-400 text-center">
-              ● 대전 풀싸롱
-            </h3>
-            <p className="text-neutral-300 text-center leading-relaxed">
-              세련된 인테리어가 조화를 이루는 프리미엄 라운지. 
-              <br />깊이 있는 대화와 각종 모임까지 품격 있게 즐길 수 있습니다.
-            </p>
-            <div className="text-center">
+          {/* 오른쪽: 풀싸롱 */}
+          <article>
+            <div
+              className="relative h-[320px] w-full rounded-3xl overflow-hidden bg-cover bg-center"
+              style={{ backgroundImage: "url('/pool.jpg')" }}
+              role="img"
+              aria-label="대전 풀싸롱"
+            >
+              <div className="absolute inset-0 bg-black/30" />
+            </div>
+
+            <div className="mt-6 text-center">
+              <div className="flex justify-center items-center gap-2 text-pink-400 font-extrabold text-2xl">
+                <span className="inline-block w-3 h-3 rounded-full bg-pink-500" />
+                대전 풀싸롱
+              </div>
+              <p className="mt-4 text-neutral-300">
+                세련된 인테리어가 조화를 이루는 프리미엄 라운지. 깊이 있는 대화와
+                각종 모임까지 품격 있게 즐길 수 있습니다.
+              </p>
               <a
-                href={telHref}
-                className="inline-block px-5 py-3 rounded-xl bg-neutral-900 hover:bg-neutral-800 border border-neutral-700"
+                href="#rooms"
+                className="inline-block mt-6 rounded-xl border border-neutral-700 px-5 py-3 text-neutral-200 hover:bg-neutral-800"
               >
                 대전 풀싸롱
               </a>
@@ -203,25 +221,25 @@ export default function App() {
       </section>
 
       {/* GIF 갤러리: 세로 정렬(원본 크기, 화면 넘치면 줄이기) */}
-<section id="gallery" className="anchor-target bg-neutral-950">
-  <div className="max-w-4xl mx-auto px-4 py-12">
-    <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-8">소개</h2>
+      <section id="gallery" className="anchor-target bg-neutral-950">
+        <div className="max-w-4xl mx-auto px-4 py-12">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-8">소개</h2>
 
-    {/* 세로 스택 */}
-    <div className="flex flex-col items-center gap-6">
-      {gallery.map((src, i) => (
-        <img
-          key={i}
-          src={src}
-          alt={`갤러리 ${String(i + 1).padStart(3, "0")}`}
-          className="w-auto h-auto max-w-full rounded-xl border border-neutral-800 bg-neutral-900 select-none"
-          loading="lazy"
-          draggable="false"
-        />
-      ))}
-    </div>
-  </div>
-</section>
+          {/* 세로 스택 */}
+          <div className="flex flex-col items-center gap-6">
+            {gallery.map((src, i) => (
+              <img
+                key={i}
+                src={src}
+                alt={`갤러리 ${String(i + 1).padStart(3, "0")}`}
+                className="w-auto h-auto max-w-full rounded-xl border border-neutral-800 bg-neutral-900 select-none"
+                loading="lazy"
+                draggable="false"
+              />
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* 이용 방법 (아이콘은 이모지로 간단히) */}
       <section id="howto" className="anchor-target bg-neutral-950 border-t border-neutral-800">
@@ -296,14 +314,14 @@ export default function App() {
         </div>
       </section>
 
-{/* 하단 고정 콜바 (모바일 노출) */}
-<div className="fixed bottom-0 inset-x-0 z-40 sm:hidden">
-  <div className="mx-3 mb-3 rounded-xl bg-fuchsia-600 text-white shadow-lg">
-    <a href={telHref} className="flex items-center justify-center py-3 font-semibold">
-      📞 지금 전화하기 · {SITE.phone}
-    </a>
-  </div>
-</div>
+      {/* 하단 고정 콜바 (모바일 노출) */}
+      <div className="fixed bottom-0 inset-x-0 z-40 sm:hidden">
+        <div className="mx-3 mb-3 rounded-xl bg-fuchsia-600 text-white shadow-lg">
+          <a href={telHref} className="flex items-center justify-center py-3 font-semibold">
+            📞 지금 전화하기 · {SITE.phone}
+          </a>
+        </div>
+      </div>
 
 
       {/* 푸터 */}

@@ -1,0 +1,14 @@
+# netlify.toml
+# 1) 모든 http 요청을 https로 301 리다이렉트
+[[redirects]]
+  from = "http://*"
+  to   = "https://:splat"
+  status = 301
+  force = true
+
+# 2) www → apex(루트 도메인)로 301 리다이렉트
+[[redirects]]
+  from = "https://www.xn--vk1br59astaqby1fn64c.com/*"
+  to   = "https://xn--vk1br59astaqby1fn64c.com/:splat"
+  status = 301
+  force = true

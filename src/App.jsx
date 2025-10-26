@@ -10,7 +10,7 @@ const SITE = {
   year: "",
   h1Line1: "",
   h1Line2: "",
-  phone: "010-2174-7954",
+  phone: "010-2417-7954",
   addressLine: "대전 유성구 봉명동",
   // 지도 검색어(또는 좌표 문자열), 길찾기 링크
   mapQuery: "대전광역시 유성구 온천로 9",
